@@ -188,10 +188,10 @@ def create_predictor(args, mode, logger):
         return sess, sess.get_inputs()[0], None, None
 
     else:
-        file_names = ['model', 'inference']
+        file_names = ['model', 'inference','best_accuracy']
         for file_name in file_names:
-            model_file_path = '{}/{}.pdmodel'.format(model_dir, file_name)
-            params_file_path = '{}/{}.pdiparams'.format(model_dir, file_name)
+            model_file_path = '{}/{}.pdopt'.format(model_dir, file_name)
+            params_file_path = '{}/{}.pdparams'.format(model_dir, file_name)
             if os.path.exists(model_file_path) and os.path.exists(
                     params_file_path):
                 break
